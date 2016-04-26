@@ -1,0 +1,8 @@
+package: supul/uservault
+subpackages:
+  - cmd
+import:
+    - package: github.com/gin-gonic/gin
+      version: 3d002e382355cafc15d706b92899b1961d5b79e9
+    - package: github.com/spf13/cobra
+      version: 4c05eb1145f16d0e6bb4a3e1b6d769f4713cb41f

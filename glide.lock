@@ -1,0 +1,8 @@
+hash: 0fc999237b77f92fe2a7fa42216087532af38f609d2789fd9dbcced7ba672d47
+updated: 2016-04-26T20:28:20.971219309+02:00
+imports:
+- name: github.com/gin-gonic/gin
+  version: 3d002e382355cafc15d706b92899b1961d5b79e9
+- name: github.com/spf13/cobra
+  version: 4c05eb1145f16d0e6bb4a3e1b6d769f4713cb41f
+devImports: []
