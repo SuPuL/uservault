@@ -1,4 +1,4 @@
-package: supul/uservault
+package: github.com/supul/uservault
 subpackages:
   - cmd
 import:

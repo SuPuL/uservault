@@ -21,12 +21,11 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
-	"github.com/supul/uservault/vendor/github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 	"log"
-	"net/http"
+	//"net/http"
+	"github.com/spf13/viper"
 )
 
 // serveCmd represents the serve command
@@ -47,20 +46,22 @@ var serveCmd = &cobra.Command{
 
 		log.Println("Serve called")
 
-		env, _ = cmd.Flags().GetString("env")
-
+		var env = viper.GetString("env")
 		log.Println("Set environment:", env)
 		gin.SetMode(env)
 
-		router := gin.Default()
+		var port = viper.GetString("server.port")
+		log.Println("Use port:", port)
 
-		v1 := router.Group("/v1.0")
+		//router := gin.Default()
 
-		v1.GET("/health", func(c *gin.Context) {
-		        c.JSON(http.StatusOK, gin.H{
-		                "message": "ok",
-		        })
-		})
+		//v1 := router.Group("/v1.0")
+                //
+		//v1.GET("/health", func(c *gin.Context) {
+		//        c.JSON(http.StatusOK, gin.H{
+		//                "message": "ok",
+		//        })
+		//})
 		//
 		//// User Handling
 		//v1.GET("/users", func (c *gin.Context) {
@@ -77,7 +78,7 @@ var serveCmd = &cobra.Command{
 		//        c.JSON(http.StatusNotFound, gin.H{})
 		//})
 
-		var err error;
+		//var err error;
 
 		//if (useTls) {
 		//	err = router.RunTLS(addr, certFile, keyFile);
@@ -85,8 +86,8 @@ var serveCmd = &cobra.Command{
 		//	err = router.Run(addr);
 		//}
 
-		log.Printf("About to listen on 10443. Go to https://127.0.0.1:10443/")
-		log.Fatal(err)
+		//log.Printf("About to listen on 10443. Go to https://127.0.0.1:10443/")
+		//log.Fatal(err)
 	},
 }
 

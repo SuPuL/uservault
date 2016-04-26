@@ -72,8 +72,9 @@ func initConfig() {
 	var configFileName string = "config"
 	if "release" != env {
 		configFileName += "_" + env
-		log.Println("Default config filename:", configFileName)
 	}
+
+	log.Println("Config filename:", configFileName)
 
 	viper.BindPFlags(RootCmd.Flags())
 
